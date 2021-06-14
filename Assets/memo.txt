@@ -1,0 +1,43 @@
+学校のパソコンからデータをusbに保存しversionも同じ状態のunityを準備しビルドしてみるとなぜかソリューションを開こうとすると見つからないとメッセージがポップアップし通らない
+unity とvisual studioのpathの把握範囲がおかしいわけではなくAssembly-Csharpのpathがおかしいだけであった
+解決法 以前からビルドする際にAppフォルダを使いまわしておりこれによりpathが変更されていなかった. これを一度消去し再度ビルドすることでpathも変更され正常にビルドすることができた.
+
+
+Log
+今のところ
+・hololensのカメラを使用した撮影
+・http通信による簡易的なwebサーバー(flask)との通信(POST/GET)
+・JSONによる値の取得
+・UDP通信によるバイトデータの送信 
+
+・hololensのマイクを利用したclipの生成
+
+が可能
+
+
+また3DtextやRaycasthitなどを用いた対象の把握や文字の3D表示が可能
+
+プロジェクト　現時点
+顔認識＋rayによるテキストの制御
+
+各キャンバスをon UI有効化
+photocap 撮影
+www_connect 転送/受信
+	frask run.py 実行
+
+Udp Network Client Managerによってクライアント側ストリーム作成
+	できないときは受信側の問題(localEP?)またはudpであるため届かない？
+
+問題 
+・現状
+	microphoneによるマイク設定 
+	OnAudioFilterReadによる音源取得
+	waveファイル作成
+
+・目標
+	マイクがhololensには4chあるがステレオでしか取得できていない
+		マイク取得の方法 4ch(Quad)
+		waveファイルのサラウンド(4ch)の方法
+
+	waveファイルを作成するのに時間がかかっている(インターバルの決定)
+	ストリームに流していない（waveファイルを内部に作成）

@@ -1,0 +1,2 @@
+D:\Desktop\Test_re\sound_home\App\GeneratedProjects\UWP\Assembly-CSharp\Assembly-CSharp.csproj;x64
+D:\Desktop\Test_re\sound_home\App\sound_home\sound_home.csproj;x64
